@@ -1,0 +1,28 @@
+# cat ~/.bash_history |grep -E ^git |cut -d " " -f 2 |sort |uniq -c |sort
+[alias]
+  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t= \\2/' | sort
+  a   = "!f() { cd ${GIT_PREFIX:-.} && git add "$1" && git s; }; f"
+  au  = !git a -u
+  st  = status
+  s   = status --short
+  ci  = commit --verbose
+  fa  = fetch --all
+  b   = branch
+  co  = checkout
+  g   = grep
+  ll  = log --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(yellow)%an%C(black) (%cr, %ci)%Creset' --abbrev-commit --date=relative
+  lla = !git ll --all
+  d   = diff
+  dc  = diff --cached
+  wd  = diff --word-diff=color
+  wdc = !git wd --cached
+  ad  = !git -c color.diff.old='red black ul' -c color.diff.new='green black ul' wd --word-diff-regex=.
+  adc = !git ad --cached
+  pi  = cherry-pick
+  rb  = rebase
+  rbu = "!f() { git rb && git smu; }; f"
+  ls  = ls-files
+  sm  = submodule
+  smi = submodule init
+  smu = submodule update
+  m   = checkout master
