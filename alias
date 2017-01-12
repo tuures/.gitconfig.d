@@ -12,9 +12,9 @@
   g   = grep
   ll  = log --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(yellow)%an%C(black) (%cr, %ci)%Creset' --abbrev-commit --date=relative
   lla = !git ll --all
-  d   = diff
-  dc  = diff --cached
-  wd  = diff --word-diff=color
+  d   = diff --submodule=diff
+  dc  = diff --submodule=diff --cached
+  wd  = diff --submodule=diff --word-diff=color
   wdc = !git wd --cached
   ad  = !git -c color.diff.old='red black ul' -c color.diff.new='green black ul' wd --word-diff-regex=.
   adc = !git ad --cached

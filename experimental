@@ -1,0 +1,8 @@
+[diff]
+  indentHeuristic = true
+[submodule]
+  fetchJobs = 4
+[rebase]
+  autostash = true
+[stash]
+  showPatch = true
