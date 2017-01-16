@@ -8,10 +8,9 @@ cd
 git clone git@github.com:tuures/.gitconfig.d.git
 ```
 
-2) add `~/.gitconfig`:
+2) include from `~/.gitconfig`:
 ```
 [include]
 path = ~/.gitconfig.d/alias
-
 #...
 ```
