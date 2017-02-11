@@ -11,7 +11,7 @@
   co  = checkout
   root = rev-parse --show-toplevel
   g   = grep
-  ll  = log --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(yellow)%an%C(black) (%cr, %ci)%Creset' --abbrev-commit --date=relative
+  ll  = log --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(yellow)%an%C(black) <%ae> (%cr, %ci)%Creset' --abbrev-commit --date=relative
   lla = !git ll --all
   d   = diff --submodule=diff
   dc  = diff --submodule=diff --cached
@@ -27,3 +27,4 @@
   smi = submodule init
   smu = submodule update
   m   = checkout master
+  zz  = stash
