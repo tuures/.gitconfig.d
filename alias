@@ -1,7 +1,7 @@
 # cat ~/.bash_history |grep -E ^git |cut -d " " -f 2 |sort |uniq -c |sort
 [alias]
   alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t= \\2/' | sort
-  a   = "!f() { cd ${GIT_PREFIX:-.} && git add "$1" && git s; }; f"
+  a   = "!f() { cd ${GIT_PREFIX:-.} && git add "$@" && git s; }; f"
   au  = !git a -u
   st  = status
   s   = status --short
@@ -21,7 +21,7 @@
   adc = !git ad --cached
   pi  = cherry-pick
   rb  = rebase
-  rbu = "!f() { git rb && git smu; }; f"
+  rbu = "!f() { git rb "$@" && git smu; }; f"
   ls  = ls-files
   sm  = submodule
   smi = submodule init
