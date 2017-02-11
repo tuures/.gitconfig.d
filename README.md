@@ -11,6 +11,6 @@ git clone git@github.com:tuures/.gitconfig.d.git
 2) include from `~/.gitconfig`:
 ```
 [include]
-path = ~/.gitconfig.d/alias
+path = ~/.gitconfig.d/index
 #...
 ```
