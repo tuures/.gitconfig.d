@@ -26,5 +26,7 @@
   sm  = submodule
   smi = submodule init
   smu = submodule update
-  m   = checkout master
+  m   = !git cou master
   zz  = stash
+
+  cou = "!f() { git co "$@" && git smu; }; f"
