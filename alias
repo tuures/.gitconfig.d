@@ -30,3 +30,5 @@
   zz  = stash
 
   cou = "!f() { git co "$@" && git smu; }; f"
+  bg  = !git b -r |cut -d / -f 2- |sort |grep -E
+  bh  = !git reflog |grep '}: checkout: moving from' | cut -d ' ' -f 8 |uniq |tac |tail -n 10
