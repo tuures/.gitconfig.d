@@ -8,7 +8,8 @@
   ci  = commit --verbose
   fa  = fetch --all
   b   = branch
-  co  = checkout
+  #co  = checkout
+  co = "!f() { git checkout "$@" && git smu; }; f"
   root = rev-parse --show-toplevel
   g   = grep
   ll  = log --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(yellow)%an%C(black) <%ae> (%cr, %ci)%Creset' --abbrev-commit --date=relative
@@ -23,12 +24,11 @@
   rb  = rebase
   rbu = "!f() { git rb "$@" && git smu; }; f"
   ls  = ls-files
+  ff  = !git ls-files |grep -E --color=always
   sm  = submodule
   smi = submodule init
   smu = submodule update
-  m   = !git cou master
+  m   = !git co master
   zz  = stash
-
-  cou = "!f() { git co "$@" && git smu; }; f"
   bg  = !git b -r |cut -d / -f 2- |sort |grep -E
   bh  = !git reflog |grep '}: checkout: moving from' | cut -d ' ' -f 8 |uniq |tac |tail -n 10
